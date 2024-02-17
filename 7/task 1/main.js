@@ -1,11 +1,11 @@
-function delay(ms) {
+function delay(miliseconds) {
   return new Promise(resolve => {
-    setTimeout(resolve, ms);
+    setTimeout(resolve, miliseconds);
   });
 }
 
 // Example usage:
 console.log('Start');
 delay(2000).then(() => {
-  console.log('This message will be delayed by 2 seconds');
+  console.log('Toy is ready');
 });
