@@ -1,0 +1,90 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.tasks {
+  border: 1px solid #000;
+  width: 400px;
+  margin: 25px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks2 {
+  border: 1px solid #000;
+  width: 400px;
+  margin: 25px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks-item input {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.tasks-item {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+}
+
+.container {
+  display: flex;
+  justify-content: center; 
+  flex-direction: row;
+  max-width: 100%;
+  max-height: auto;
+  margin: 25px auto;
+  padding: 100px;
+  gap: 200px;
+}
+.done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  width: auto;
+  height: auto;
+}
+
+.tasks-done {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.task-form input {
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-form button{
+  padding: 10;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tasks-item button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
