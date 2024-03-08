@@ -42,11 +42,18 @@ class TasksList extends Component {
     // add task to tasks2
 
     toggleDone = (id) => {
-        const doneTasks = this.state.tasks.map(task => {
+        const updatedTasks = this.state.tasks.map(task => {
             if (task.id === id) {
                 return { ...task, done: !task.done };
             }
             return task;
+        });
+
+        const doneTask = updatedTasks.find(task => task.id === id);
+
+        this.setState({
+            tasks: updatedTasks,
+            doneTasks: [...this.state.doneTasks, doneTask]
         });
     }
 
@@ -62,10 +69,9 @@ class TasksList extends Component {
                     </form>
 
                     {this.state.tasks.map((task) => (
-                       <TaskItem key={task.id} id={task.id} task={task.task} action={this.removeTask} />
+                        <TaskItem key={task.id} id={task.id} task={task.task} action={this.removeTask} />
                     ))}
                 </div>
-
 
 
                 <div className='tasks2'>
