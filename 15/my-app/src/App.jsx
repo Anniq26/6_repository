@@ -3,6 +3,7 @@ import './App.css';
 import HeaderList from './components/HeaderList';
 import FooterList from './components/FooterList';
 import { SectionFirst } from './components/SectionsList';
+import ToggleBtn from './hooks/useToggleTheme';
 
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
     return (
       <>
       <HeaderList/>
+      <ToggleBtn/>
       <SectionFirst/>
       <FooterList/>
       </>
