@@ -1,4 +1,5 @@
 import React, {PureComponent} from "react";
+import styles from './styles.module.css';
 
 class ClassTodo extends PureComponent {
     constructor(props){
@@ -80,51 +81,59 @@ shouldComponentUpdate(nextState) {
 render () {
     const { tasks, currentTask, doneTasks, inProgressTasks } = this.state
     return(
-        <div>
-            <h1>Todo App</h1>
-            <form onSubmit={this.handleSubmit}>
-                <input type="text"
-                placeholder="enter a task"
-                onChange={this.handleonChange}
-                value={currentTask} />
-                <button type="submit">add task</button>
-            </form>
-            <h1>In Progress</h1> 
-            <TodoList tasks={inProgressTasks} handleDelete={this.handleDelete} handleDone={this.handleDone} />
+        <div className={styles.project}>
+            <div className={styles.section}>
+                <h1 className={styles.title} id={styles.todo}>Todo App</h1>
+                <form onSubmit={this.handleSubmit} className={styles.form}>
+                    <div className={styles.input}>
+                        <input className={styles.value}type="text"
+                        placeholder="Enter A Task"
+                        onChange={this.handleonChange}
+                        value={currentTask} />
+                        <button className={styles.btn} type="submit">Add Task</button>
+                    </div>
+                </form>
+            </div>
+            <div className={styles.section}>
+                <h1 className={styles.title} id={styles.progress}>In Progress</h1> 
+                <TodoList tasks={inProgressTasks} handleDelete={this.handleDelete} handleDone={this.handleDone} />
 
-            <TodoList
-            tasks={tasks}
-            handleDelete={this.handleDelete}
-            handleDone={this.handleDone}/>
-            <h1>Done Tasks</h1>
-            <DoneTasks
-                doneTasks={doneTasks}
-                handleDoneDelete={this.handleDoneDelete}
-                handleReset={this.handleReset}/>
+                <TodoList
+                tasks={tasks}
+                handleDelete={this.handleDelete}
+                handleDone={this.handleDone}/>
+            </div>
+            <div className={styles.section}>
+                <h1 className={styles.title} id={styles.done}>Done Tasks</h1>
+                <DoneTasks
+                    doneTasks={doneTasks}
+                    handleDoneDelete={this.handleDoneDelete}
+                    handleReset={this.handleReset}/>
+            </div>
         </div>
     )
 }
 }
 
 const TodoList = React.memo(({tasks, handleDelete, handleDone}) => (
-    <ul>
+    <ul className={styles.form}>
         {tasks.map((task,index) => (
-            <li key={index}>
+            <li key={index} className={styles.input} id={styles.inputv2}>
                 {task.task}
-                <button onClick={() => handleDelete(index)}>delete</button>
-                <button onClick={() => handleDone(index)}>done</button>
+                <button className={styles.btn} onClick={() => handleDelete(index)}>delete</button>
+                <button className={styles.btn} onClick={() => handleDone(index)}>done</button>
             </li>
         ))}
     </ul>
 ))
 
 const DoneTasks = React.memo(({doneTasks, handleDoneDelete, handleReset}) => (
-    <ul>
+    <ul className={styles.form}>
         {doneTasks.map((task, index) => (
-            <li key={index}>
+            <li key={index} className={styles.input} id={styles.inputv2}>
                 {task.task}
-                <button onClick={() => handleDoneDelete(index)}>delete</button>
-                <button onClick={() => handleReset(index)}>reset</button>
+                <button className={styles.btn} onClick={() => handleDoneDelete(index)}>delete</button>
+                <button className={styles.btn} onClick={() => handleReset(index)}>reset</button>
             </li>
         ))}
     </ul>
