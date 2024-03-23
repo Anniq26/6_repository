@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <RouterProvider router = {createBrowserRouter(router)} />
     </div>
   )
